@@ -34,3 +34,19 @@ export const getData = () => dispatch => {
       dispatch({ type: FETCH_DATA_FAILURE, payload: err.response });
     });
 };
+
+export const LOAD_NEW_FRIEND = 'LOAD_NEW_FRIEND';
+export const NEW_FRIEND_SUCCESS='NEW_FRIEND_SUCCESS';
+
+export const postFriend = (data) => dispatch=> {
+  dispatch({type:LOAD_NEW_FRIEND});
+  axiosWithAuth()
+.post('http://localhost:5000/api/friends', data)
+.then(res =>{
+console.log("resolved:", res);
+dispatch({type: NEW_FRIEND_SUCCESS, payload: data})
+})
+.catch(err =>console.group(err));
+
+
+};

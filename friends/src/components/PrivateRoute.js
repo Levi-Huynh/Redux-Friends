@@ -12,7 +12,7 @@ return (
         if(localStorage.getItem("token") && errorStatusCode !== 403){
             return <Component {...props}/>;
 }else{
-    return <Redirect to="/Login"/>;
+    return <Redirect to="/login"/>;
 }
 
     }}
