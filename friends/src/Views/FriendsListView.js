@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import FriendsList  from "../components/FriendsList";
 // import actions
 import {getData} from "../actions/index";
+import UpdateFriendForm from "../components/UpdateFriendForm";
+import UpdateFriendContainer from '../components/UpdateFriendContainer';
 
 class FriendsListView extends React.Component {
   constructor() {
@@ -25,6 +27,7 @@ class FriendsListView extends React.Component {
          {this.props.fetchingFriend? <h1>Loading</h1> : null}
       {console.log(typeof this.props.friends)}
         <FriendsList friends={this.props.friends} />
+        <UpdateFriendContainer friends={this.props.friends}/>
       </div>
     );
   }

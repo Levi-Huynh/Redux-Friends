@@ -1,5 +1,5 @@
 import {LOGIN_START, LOGIN_SUCCESS, FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE,
-LOAD_NEW_FRIEND, NEW_FRIEND_SUCCESS} from "../actions";
+LOAD_NEW_FRIEND, NEW_FRIEND_SUCCESS, FETCH_FRIEND_UPDATE, FRIEND_UPDATE_SUCCESS} from "../actions";
 
 const initialState = {
    friends: [],
@@ -71,6 +71,20 @@ const reducer = (state = initialState, action) => {
             id: "", name: "", age:"", email: ""}
           
          return{ ...state, friends: [...state.friends, newFriend1] };
+        
+         case FETCH_FRIEND_UPDATE:
+         return{
+           ...state, error: ""
+         }
+
+         case FRIEND_UPDATE_SUCCESS:
+         let updateFriend = {
+           id: "", name:"", age:"", email:""
+         }
+         return{...state, friends: [...state.friends, updateFriend]
+
+
+         };
 
       default:
         return state;

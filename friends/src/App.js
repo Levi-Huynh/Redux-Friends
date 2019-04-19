@@ -4,6 +4,7 @@ import Login from './components/Login';
 import FriendsListView from './Views/FriendsListView';
 import FriendForm from './components/FriendForm';
 import NavBar from './components/NavBar';
+import UpdateFriendForm from './components/UpdateFriendForm';
 
 import './App.css';
 import PrivateRoute from './components/PrivateRoute';
@@ -24,7 +25,7 @@ function App() {
         <Route path="/" component={NavBar} />
         <PrivateRoute exact path="/protected" component={FriendsListView} />
         <PrivateRoute exact path="/friendForm" component={FriendForm} />
-  
+       
       </div>
     </Router>
   );

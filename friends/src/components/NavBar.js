@@ -9,7 +9,7 @@ export default props => {
           <li>
             <NavLink exact activeClassName="activeNavButton" to='/protected'><button>Friend List</button></NavLink>
             <NavLink exact activeClassName="activeNavButton" to='/friendForm'><button>Add a Friend Form</button></NavLink>
-            <NavLink exact activeClassName="activeNavButton" to='/'><button>Edit/ Delete Friend Form</button></NavLink>
+            <NavLink exact activeClassName="activeNavButton" to='/UpdateFriendForm'><button>Edit/ Delete Friend Form</button></NavLink>
           </li>
         </ul>
       </div>

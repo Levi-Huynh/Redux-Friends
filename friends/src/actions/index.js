@@ -46,7 +46,22 @@ export const postFriend = (data) => dispatch=> {
 console.log("resolved:", res);
 dispatch({type: NEW_FRIEND_SUCCESS, payload: data})
 })
-.catch(err =>console.group(err));
+.catch(err =>console.log(err));
 
 
 };
+
+
+export const FETCH_FRIEND_UPDATE = "LOAD_FRIEND_UPDATE";
+export const FRIEND_UPDATE_SUCCESS= "FRIEND_UPDATE_SUCESS";
+
+export const updateFriend = (name, age, email, id) => dispatch => {
+  dispatch({type: FETCH_FRIEND_UPDATE});
+  axiosWithAuth()
+  .put(`http://localhost:5000/api/friends/${id}`, {name, age:Number(age), email})
+  .then(res => {
+    console.log("putResolved:", res);
+    dispatch({type: FRIEND_UPDATE_SUCCESS, payload: id});
+  })
+  .catch(err=> console.log(err));
+}
