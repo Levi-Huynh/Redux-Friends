@@ -8,6 +8,7 @@ import UpdateFriendForm from './components/UpdateFriendForm';
 
 import './App.css';
 import PrivateRoute from './components/PrivateRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         </ul>
         <Route path="/login" component={Login} />
         <Route path="/" component={NavBar} />
-        <PrivateRoute exact path="/protected" component={FriendsListView} />
+        <ProtectedRoute path="/protected" component={FriendsListView} />
         <PrivateRoute exact path="/friendForm" component={FriendForm} />
        
       </div>

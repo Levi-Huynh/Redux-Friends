@@ -43,12 +43,7 @@ const reducer = (state = initialState, action) => {
           errorStatusCode: null,
           fetchingFriends: false,
           friends: action.payload
-          // gasPrices: action.payload
-          //   .filter(price => price.type === 'Gasoline - Regular')
-          //   .filter(
-          //     price =>
-          //       price.location === 'US' || price.location === 'State of Hawaii'
-          //   )
+        
         };
       case FETCH_DATA_FAILURE:
         return {
